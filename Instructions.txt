@@ -1,0 +1,7 @@
+install node
+open cmd in vscode terminal
+npm init -y
+npm install express
+make the index.html and sever.js files
+downloads the images
+run by node server.js
