@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SPPU TE-IT Syllabus</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+  <style>
+    body { background-color: #e8eaf6; }
+    .subject-card { background:#fff; border-radius: 10px; padding: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 15px; }
+    footer { background: #283593; color: #fff; text-align: center; padding: 15px; }
+    /* Hidden syllabus detail box */
+    .syllabus-detail { display:none; background: #e8eaf6; border-left: 4px solid #3949ab; padding: 10px; margin-top: 10px; border-radius: 5px; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#283593;">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">📘 SPPU TE-IT Syllabus</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#sem5">Semester 5</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sem6">Semester 6</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="text-center py-4 text-white" style="background-color:#283593;">
+    <!-- Heading with image/icon as required -->
+    <div style="font-size:3rem;">🎓</div>
+    <h1>SPPU – TE Information Technology</h1>
+    <p class="lead">Savitribai Phule Pune University | Third Year IT Syllabus 2019 Pattern</p>
+  </header>
+
+  <!-- SEMESTER 5 -->
+  <section id="sem5" class="container my-5">
+    <h2 class="mb-3">📗 Semester 5 Subjects</h2>
+
+    <!-- Subject 1 -->
+    <div class="subject-card">
+      <div class="d-flex justify-content-between align-items-center">
+        <h5> Database Management Systems (DBMS)</h5>
+        <!-- Button to show detailed syllabus -->
+        <button class="btn btn-sm" style="background:#283593; color:#fff;" onclick="toggleSyllabus('dbms')">View Syllabus</button>
+      </div>
+      <div id="dbms" class="syllabus-detail">
+        <strong>Units:</strong><br/>
+        1. Introduction to DBMS, ER Model<br/>
+        2. Relational Model, SQL<br/>
+        3. Normalization (1NF, 2NF, 3NF, BCNF)<br/>
+        4. Transaction Management & Concurrency Control<br/>
+        5. Indexing, Hashing, Query Optimization
+      </div>
+    </div>
+
+    <!-- Subject 2 -->
+    <div class="subject-card">
+      <div class="d-flex justify-content-between align-items-center">
+        <h5> Computer Networks</h5>
+        <button class="btn btn-sm" style="background:#283593; color:#fff;" onclick="toggleSyllabus('cn')">View Syllabus</button>
+      </div>
+      <div id="cn" class="syllabus-detail">
+        <strong>Units:</strong><br/>
+        1. Introduction to Networks, OSI Model<br/>
+        2. Data Link Layer, MAC<br/>
+        3. Network Layer – IP, Routing<br/>
+        4. Transport Layer – TCP, UDP<br/>
+        5. Application Layer – HTTP, DNS, FTP
+      </div>
+    </div>
+
+    <!-- Subject 3 -->
+    <div class="subject-card">
+      <div class="d-flex justify-content-between align-items-center">
+        <h5>Theory of Computation (TOC)</h5>
+        <button class="btn btn-sm" style="background:#283593; color:#fff;" onclick="toggleSyllabus('toc')">View Syllabus</button>
+      </div>
+      <div id="toc" class="syllabus-detail">
+        <strong>Units:</strong><br/>
+        1. Finite Automata – DFA, NFA<br/>
+        2. Regular Expressions & Languages<br/>
+        3. Context-Free Grammars & PDA<br/>
+        4. Turing Machines<br/>
+        5. Decidability & Complexity
+      </div>
+    </div>
+
+  </section>
+
+  <!-- SEMESTER 6 -->
+  <section id="sem6" class="container mb-5">
+    <h2 class="mb-3">📘 Semester 6 Subjects</h2>
+
+    <!-- Subject 4 -->
+    <div class="subject-card">
+      <div class="d-flex justify-content-between align-items-center">
+        <h5> Artificial Intelligence (AI)</h5>
+        <button class="btn btn-sm" style="background:#283593; color:#fff;" onclick="toggleSyllabus('ai')">View Syllabus</button>
+      </div>
+      <div id="ai" class="syllabus-detail">
+        <strong>Units:</strong><br/>
+        1. Introduction to AI, Search Algorithms<br/>
+        2. Knowledge Representation<br/>
+        3. Expert Systems<br/>
+        4. Machine Learning Basics<br/>
+        5. Natural Language Processing
+      </div>
+    </div>
+
+    <!-- Subject 5 -->
+    <div class="subject-card">
+      <div class="d-flex justify-content-between align-items-center">
+        <h5> Information Security</h5>
+        <button class="btn btn-sm" style="background:#283593; color:#fff;" onclick="toggleSyllabus('is')">View Syllabus</button>
+      </div>
+      <div id="is" class="syllabus-detail">
+        <strong>Units:</strong><br/>
+        1. Introduction to Security, CIA Triad<br/>
+        2. Cryptography – Symmetric & Asymmetric<br/>
+        3. Network Security – Firewalls, VPN<br/>
+        4. Web Security – SQL Injection, XSS<br/>
+        5. Digital Signatures & PKI
+      </div>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 SPPU TE-IT Syllabus Portal. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Show/hide detailed syllabus for each subject
+    function toggleSyllabus(id) {
+      var box = document.getElementById(id);
+      box.style.display = (box.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+
+</body>
+</html>

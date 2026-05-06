@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TennisWorld - All About Tennis</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+  <style>
+    body { background-color: #e8f5e9; }
+    /* Player card style */
+    .player-card { background: #fff; border-radius: 10px; padding: 20px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    /* Hidden achievements box */
+    .achievement-box { display:none; background: #f1f8e9; border-left: 4px solid #2e7d32; padding: 10px; margin-top: 10px; border-radius: 5px; }
+    footer { background: #1b5e20; color: #fff; text-align: center; padding: 15px; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#2e7d32;">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#"> TennisWorld</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#players">Players</a></li>
+          <li class="nav-item"><a class="nav-link" href="#grandslam">Grand Slams</a></li>
+          <li class="nav-item"><a class="nav-link" href="#rules">Rules</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="text-center py-5 text-white" style="background-color:#388e3c;">
+    <div style="font-size:3rem;"></div>
+    <h1>All About Tennis</h1>
+    <p class="lead">Players, Grand Slams, Rules – Everything Tennis!</p>
+  </header>
+
+  <!-- PLAYERS SECTION with buttons for achievements -->
+  <section id="players" class="container my-5">
+    <h2 class="text-center mb-4"> Famous Players</h2>
+    <div class="row g-4">
+
+      <!-- Player 1 -->
+      <div class="col-md-4">
+        <div class="player-card">
+          <div style="font-size:3rem;">🇨🇭</div>
+          <h5>Roger Federer</h5>
+          <p>Switzerland | Right-handed</p>
+          <!-- Button to display achievements -->
+          <button class="btn btn-sm" style="background:#2e7d32; color:#fff;" onclick="toggleAch('fed')">
+            View Achievements
+          </button>
+          <div id="fed" class="achievement-box">
+             20 Grand Slam titles<br/>
+             Wimbledon (8x), US Open (5x), Australian Open (6x), French Open (1x)<br/>
+             Olympic Gold in Doubles (2008)
+          </div>
+        </div>
+      </div>
+
+      <!-- Player 2 -->
+      <div class="col-md-4">
+        <div class="player-card">
+          <div style="font-size:3rem;">🇪🇸</div>
+          <h5>Rafael Nadal</h5>
+          <p>Spain | Left-handed</p>
+          <button class="btn btn-sm" style="background:#2e7d32; color:#fff;" onclick="toggleAch('nad')">
+            View Achievements
+          </button>
+          <div id="nad" class="achievement-box">
+             22 Grand Slam titles<br/>
+             French Open (14x – "King of Clay"), Wimbledon (2x), US Open (4x)<br/>
+             Olympic Gold Singles (2008)
+          </div>
+        </div>
+      </div>
+
+      <!-- Player 3 -->
+      <div class="col-md-4">
+        <div class="player-card">
+          <div style="font-size:3rem;">🇷🇸</div>
+          <h5>Novak Djokovic</h5>
+          <p>Serbia | Right-handed</p>
+          <button class="btn btn-sm" style="background:#2e7d32; color:#fff;" onclick="toggleAch('djok')">
+            View Achievements
+          </button>
+          <div id="djok" class="achievement-box">
+             24 Grand Slam titles (most ever)<br/>
+             Australian Open (10x), Wimbledon (7x), US Open (4x), French Open (3x)<br/>
+             Olympic Gold Singles (2024)
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GRAND SLAM SCHEDULE SECTION -->
+  <section id="grandslam" class="container mb-5">
+    <h2 class="text-center mb-4"> Grand Slam Schedule</h2>
+    <table class="table table-bordered table-striped">
+      <thead style="background-color:#2e7d32; color:#fff;">
+        <tr><th>Tournament</th><th>Location</th><th>Surface</th><th>Month</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Australian Open</td><td>Melbourne, Australia</td><td>Hard Court</td><td>January</td></tr>
+        <tr><td>French Open (Roland Garros)</td><td>Paris, France</td><td>Clay Court</td><td>May–June</td></tr>
+        <tr><td>Wimbledon</td><td>London, England</td><td>Grass Court</td><td>June–July</td></tr>
+        <tr><td>US Open</td><td>New York, USA</td><td>Hard Court</td><td>August–September</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- RULES SECTION -->
+  <section id="rules" class="container mb-5">
+    <h2 class="mb-3"> Basic Tennis Rules</h2>
+    <ul class="list-group">
+      <li class="list-group-item"> A match is played best of 3 or 5 sets.</li>
+      <li class="list-group-item"> A set is won by the first player to win 6 games (with a 2-game lead).</li>
+      <li class="list-group-item"> Scoring: Love (0), 15, 30, 40, Game.</li>
+      <li class="list-group-item"> A "Deuce" occurs when both players reach 40. Two consecutive points win the game.</li>
+      <li class="list-group-item"> The ball must land within the court boundaries. If out, the opponent wins the point.</li>
+    </ul>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 TennisWorld. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Toggle achievements box for each player
+    function toggleAch(id) {
+      var box = document.getElementById(id);
+      box.style.display = (box.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+
+</body>
+</html>

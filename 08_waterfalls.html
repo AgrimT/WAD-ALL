@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Water Falls in India</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+  <style>
+    body { background-color: #e0f7fa; }
+    .waterfall-card { border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); background:#fff; }
+    .waterfall-card img { width: 100%; height: 200px; object-fit: cover; }
+    footer { background: #006064; color: #fff; text-align: center; padding: 15px; }
+    /* How to reach section shown on button click */
+    .reach-box { display:none; background: #e0f7fa; border-left: 4px solid #00838f; padding: 10px; margin-top: 10px; border-radius: 5px; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#00838f;">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#"> India Waterfalls</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#waterfalls">Waterfalls</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="text-center py-5 text-white" style="background:#00838f;">
+    <h1> Waterfalls of India</h1>
+    <p class="lead">Discover the most breathtaking waterfalls across India</p>
+  </header>
+
+  <!-- WATERFALL CARDS SECTION -->
+  <section id="waterfalls" class="container my-5">
+    <h2 class="text-center mb-4">Famous Waterfalls</h2>
+    <div class="row g-4">
+
+      <!-- Waterfall 1 -->
+      <div class="col-md-4">
+        <div class="waterfall-card">
+          <!-- Using placeholder image with text overlay since we can't load real images -->
+          <div style="height:200px; background: linear-gradient(#00838f, #b2ebf2); display:flex; align-items:center; justify-content:center; font-size:4rem;"></div>
+          <div class="p-3">
+            <h5>Jog Falls, Karnataka</h5>
+            <p>The second highest waterfall in India at 830 feet. Located on the Sharavathi River.</p>
+            <!-- How to reach button -->
+            <button class="btn btn-sm" style="background:#00838f; color:#fff;" onclick="toggleReach('jog')"> How to Reach</button>
+            <div id="jog" class="reach-box">
+              Nearest city: Shimoga (100 km). Train to Shimoga, then bus to Jog Falls.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Waterfall 2 -->
+      <div class="col-md-4">
+        <div class="waterfall-card">
+          <div style="height:200px; background: linear-gradient(#004d40, #a5d6a7); display:flex; align-items:center; justify-content:center; font-size:4rem;"></div>
+          <div class="p-3">
+            <h5>Dudhsagar Falls, Goa</h5>
+            <p>A four-tiered waterfall located in the Bhagwan Mahavir Wildlife Sanctuary.</p>
+            <button class="btn btn-sm" style="background:#00838f; color:#fff;" onclick="toggleReach('dudh')"> How to Reach</button>
+            <div id="dudh" class="reach-box">
+              Nearest station: Collem. Jeep safari from Molem. Best visited by train on the Goa-Karnataka route.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Waterfall 3 -->
+      <div class="col-md-4">
+        <div class="waterfall-card">
+          <div style="height:200px; background: linear-gradient(#1a237e, #90caf9); display:flex; align-items:center; justify-content:center; font-size:4rem;"></div>
+          <div class="p-3">
+            <h5>Athirappilly Falls, Kerala</h5>
+            <p>The largest waterfall in Kerala, known as the "Niagara of India".</p>
+            <button class="btn btn-sm" style="background:#00838f; color:#fff;" onclick="toggleReach('athi')"> How to Reach</button>
+            <div id="athi" class="reach-box">
+              Nearest city: Chalakudy (32 km). Bus from Thrissur or Ernakulam to Athirappilly.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="bg-light py-4">
+    <div class="container">
+      <h3>About This Portal</h3>
+      <p>This portal is dedicated to showcasing the magnificent waterfalls of India. Plan your visit and explore nature's wonders.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 India Waterfalls. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Toggle "How to Reach" section for each waterfall
+    function toggleReach(id) {
+      var box = document.getElementById(id);
+      box.style.display = (box.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+
+</body>
+</html>

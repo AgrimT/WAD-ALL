@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CorpHQ - Company Dashboard</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+  <style>
+    body { background-color: #fafafa; }
+    .sidebar { background-color: #212121; min-height: 100vh; padding: 20px; }
+    .sidebar a { color: #bdbdbd; text-decoration: none; display: block; padding: 8px 0; }
+    .sidebar a:hover { color: #fff; font-weight: bold; }
+    .stat-card { border-radius: 10px; padding: 20px; text-align: center; }
+    footer { background: #212121; color: #fff; text-align: center; padding: 12px; margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="#"> CorpHQ</a>
+      <form class="d-flex ms-auto">
+        <input class="form-control me-2" type="search" placeholder="Search employees, projects..."/>
+        <button class="btn btn-outline-light" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+
+      <!-- SIDEBAR -->
+      <div class="col-md-2 sidebar">
+        <h5 class="text-white mt-2">Navigation</h5>
+        <a href="#"> Dashboard</a>
+        <a href="#"> Employees</a>
+        <a href="#"> Projects</a>
+        <a href="#"> Reports</a>
+        <a href="#"> Finance</a>
+        <a href="#"> Meetings</a>
+        <a href="#"> Announcements</a>
+        <a href="#"> Settings</a>
+      </div>
+
+      <!-- MAIN CONTENT -->
+      <div class="col-md-10 p-4">
+        <h2 class="mb-4">Company Overview</h2>
+
+        <!-- Stat Cards -->
+        <div class="row g-3 mb-4">
+          <div class="col-md-3">
+            <div class="stat-card bg-dark text-white">
+              <h3>450</h3><p>Total Employees</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-card bg-primary text-white">
+              <h3>28</h3><p>Active Projects</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-card bg-success text-white">
+              <h3>₹85L</h3><p>Monthly Revenue</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-card bg-warning text-dark">
+              <h3>92%</h3><p>Client Satisfaction</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Announcements -->
+        <div class="card p-3 mb-4">
+          <h5> Announcements</h5>
+          <ul class="list-group list-group-flush mt-2">
+            <li class="list-group-item"> Q2 Review meeting scheduled on 10th June.</li>
+            <li class="list-group-item"> New HR policy effective from 1st July.</li>
+            <li class="list-group-item"> Office will be closed on 15th June (Holiday).</li>
+          </ul>
+        </div>
+
+        <!-- Employee Table -->
+        <div class="card p-3">
+          <h5> Recent Employees</h5>
+          <table class="table table-bordered mt-2">
+            <thead class="table-dark">
+              <tr>
+                <th>Emp ID</th><th>Name</th><th>Department</th><th>Role</th><th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>E001</td><td>Ravi Tiwari</td><td>IT</td><td>Developer</td><td><span class="badge bg-success">Active</span></td></tr>
+              <tr><td>E002</td><td>Sunita Jain</td><td>HR</td><td>Manager</td><td><span class="badge bg-success">Active</span></td></tr>
+              <tr><td>E003</td><td>Deepak Nair</td><td>Finance</td><td>Analyst</td><td><span class="badge bg-warning text-dark">On Leave</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 CorpHQ. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

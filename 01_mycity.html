@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MyCity - Pune</title>
+  <!-- Bootstrap CSS for responsive layout -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+  <style>
+    /* Background and general styles */
+    body { background-color: #f0f4f8; }
+
+    /* Large city name at the top */
+    .city-title { font-size: 4rem; font-weight: bold; color: #1a237e; }
+
+    /* Each landmark name in a different color and style */
+    .landmark-pune   { color: #e53935; font-family: Georgia, serif; font-size: 1.2rem; }
+    .landmark-shani  { color: #388e3c; font-family: 'Courier New', monospace; font-size: 1.2rem; }
+    .landmark-aga    { color: #7b1fa2; font-family: Verdana, sans-serif; font-size: 1.2rem; }
+    .landmark-osho   { color: #f57c00; font-family: 'Times New Roman', serif; font-size: 1.2rem; }
+
+    /* Card style for landmark info popup area */
+    .info-box { background: #fff; border-left: 5px solid #1a237e; padding: 15px; margin-top: 10px; border-radius: 5px; display: none; }
+
+    /* Footer styling */
+    footer { background-color: #1a237e; color: #fff; padding: 15px; text-align: center; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">MyCity</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#landmarks">Landmarks</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HEADER: City Name in large text -->
+  <header class="text-center py-5 bg-primary text-white">
+    <h1 class="city-title">PUNE</h1>
+    <p class="lead">The Oxford of the East – A City of History, Culture & Youth</p>
+  </header>
+
+  <!-- LANDMARKS SECTION -->
+  <section id="landmarks" class="container my-5">
+    <h2 class="mb-4 text-center">Famous Landmarks</h2>
+    <div class="row g-4">
+
+      <!-- Landmark 1 -->
+      <div class="col-md-3 text-center">
+        <p class="landmark-pune">Shaniwar Wada</p>
+        <!-- Button to show/hide info -->
+        <button class="btn btn-danger btn-sm" onclick="toggleInfo('info1')">View Info</button>
+        <div id="info1" class="info-box">
+          <strong>Shaniwar Wada</strong><br/>
+          A historic fortification in the heart of Pune, built in 1732 by the Peshwa rulers.
+        </div>
+      </div>
+
+      <!-- Landmark 2 -->
+      <div class="col-md-3 text-center">
+        <p class="landmark-shani">Aga Khan Palace</p>
+        <button class="btn btn-success btn-sm" onclick="toggleInfo('info2')">View Info</button>
+        <div id="info2" class="info-box">
+          <strong>Aga Khan Palace</strong><br/>
+          Built in 1892, this palace is historically significant as it served as a prison for Mahatma Gandhi.
+        </div>
+      </div>
+
+      <!-- Landmark 3 -->
+      <div class="col-md-3 text-center">
+        <p class="landmark-aga">Osho Ashram</p>
+        <button class="btn btn-warning btn-sm" onclick="toggleInfo('info3')">View Info</button>
+        <div id="info3" class="info-box">
+          <strong>Osho Ashram</strong><br/>
+          A famous meditation resort in Koregaon Park, attracting visitors from all over the world.
+        </div>
+      </div>
+
+      <!-- Landmark 4 -->
+      <div class="col-md-3 text-center">
+        <p class="landmark-osho">Sinhagad Fort</p>
+        <button class="btn btn-info btn-sm" onclick="toggleInfo('info4')">View Info</button>
+        <div id="info4" class="info-box">
+          <strong>Sinhagad Fort</strong><br/>
+          A historic fort located on a steep cliff, 30 km from Pune. Famous for the battle of 1670.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="bg-light py-4">
+    <div class="container">
+      <h3>About Pune</h3>
+      <p>Pune is a major city in Maharashtra, India. It is known for its educational institutions, IT industry, and rich Maratha heritage.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="container py-4">
+    <h3>Contact</h3>
+    <p>Email: info@mycitypune.com | Phone: +91-20-12345678</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 MyCity Pune. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- JavaScript to toggle landmark info boxes -->
+  <script>
+    function toggleInfo(id) {
+      var box = document.getElementById(id);
+      // Toggle display between block and none
+      if (box.style.display === 'block') {
+        box.style.display = 'none';
+      } else {
+        box.style.display = 'block';
+      }
+    }
+  </script>
+
+</body>
+</html>

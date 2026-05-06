@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>College Portal Dashboard</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+  <style>
+    body { background-color: #e8f5e9; }
+    .sidebar { background-color: #1b5e20; min-height: 100vh; padding: 20px; }
+    .sidebar a { color: #c8e6c9; text-decoration: none; display: block; padding: 8px 0; font-size: 1rem; }
+    .sidebar a:hover { color: #fff; font-weight: bold; }
+    .card { border: none; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .stat-card { text-align: center; padding: 20px; }
+    footer { background-color: #1b5e20; color: #fff; text-align: center; padding: 12px; margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="#">🎓 College Portal</a>
+      <!-- Search Box in Navbar -->
+      <form class="d-flex ms-auto">
+        <input class="form-control me-2" type="search" placeholder="Search courses, students..." />
+        <button class="btn btn-light" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+
+      <!-- SIDEBAR with navigation links -->
+      <div class="col-md-2 sidebar">
+        <h5 class="text-white mt-2">Menu</h5>
+        <a href="#"> Dashboard</a>
+        <a href="#"> Students</a>
+        <a href="#"> Courses</a>
+        <a href="#"> Faculty</a>
+        <a href="#"> Timetable</a>
+        <a href="#"> Exams</a>
+        <a href="#"> Fees</a>
+        <a href="#"> Notices</a>
+        <a href="#"> Settings</a>
+      </div>
+
+      <!-- MAIN CONTENT AREA -->
+      <div class="col-md-10 p-4">
+        <h2 class="mb-4">Welcome, Admin!</h2>
+
+        <!-- Stats Cards Row -->
+        <div class="row g-3 mb-4">
+          <div class="col-md-3">
+            <div class="card stat-card bg-primary text-white">
+              <h3>1240</h3>
+              <p>Total Students</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card stat-card bg-warning text-dark">
+              <h3>85</h3>
+              <p>Faculty Members</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card stat-card bg-success text-white">
+              <h3>32</h3>
+              <p>Courses Offered</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card stat-card bg-danger text-white">
+              <h3>5</h3>
+              <p>Departments</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Notice Board -->
+        <div class="card p-3 mb-4">
+          <h5>📢 Latest Notices</h5>
+          <ul>
+            <li>Exam timetable for Semester 4 published.</li>
+            <li>Fee payment deadline: 15th June 2025.</li>
+            <li>Annual Sports Day on 20th June 2025.</li>
+          </ul>
+        </div>
+
+        <!-- Recent Students Table -->
+        <div class="card p-3">
+          <h5> Recently Enrolled Students</h5>
+          <table class="table table-striped mt-2">
+            <thead class="table-success">
+              <tr>
+                <th>Roll No</th><th>Name</th><th>Course</th><th>Year</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>101</td><td>Aarav Sharma</td><td>B.Tech IT</td><td>1st</td></tr>
+              <tr><td>102</td><td>Priya Patil</td><td>BCA</td><td>2nd</td></tr>
+              <tr><td>103</td><td>Rohit Mehta</td><td>B.Sc CS</td><td>3rd</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 College Portal. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
