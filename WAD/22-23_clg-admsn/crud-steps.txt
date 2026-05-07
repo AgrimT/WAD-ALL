@@ -1,0 +1,26 @@
+1.Open cmd in your project folder
+  cd "C:\Users\Aishwarya\Desktop\WAD\22-23_college-admsn"
+
+2.Start server
+  node server.js
+
+3.Open browser 
+  It should show "Server is running!"
+
+4.Open MongoDB compass and in the Connections tab on the left find 127.0.0.1:27017 and click connect 
+
+5.Click on the dropdown and it should show collegeDB, click on its dropdown and check if it shows a folder students , if not then create the folder "students"
+
+6.Open Postman, skip login and add a new tab
+
+7.Select POST in the dropdown and paste the url "http://localhost:5000/api/students/add" and in the tab below select 'Body' and choose 'raw' then in the dropdown next to it choose "JSON" and click "Send".
+
+8.The change should be reflected in MongoDB compass
+
+9.Add a new tab and now select GET and paste url "http://localhost:5000/api/students" and click "Send"
+
+10.For GET by id add a new tab and select GET and paste url "http://localhost:5000/api/students/<id>" , in place of <id> paste the _id from MongoDB compass 
+
+11.Add a new tab and select PUT and paste url "http://localhost:5000/api/students/update/<id>"
+
+12.Add a new tab and select DELETE and paste url "http://localhost:5000/api/students/delete/<id>" and refresh the MongoDB compass to see results  
