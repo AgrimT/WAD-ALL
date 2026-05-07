@@ -1,26 +1,243 @@
-1.Open cmd in your project folder
-  cd "C:\Users\Aishwarya\Desktop\WAD\22-23_college-admsn"
+1. Create Project Folder
 
-2.Start server
-  node server.js
+Create folder:
 
-3.Open browser 
-  It should show "Server is running!"
+CRUD
 
-4.Open MongoDB compass and in the Connections tab on the left find 127.0.0.1:27017 and click connect 
+Open folder in terminal.
 
-5.Click on the dropdown and it should show collegeDB, click on its dropdown and check if it shows a folder students , if not then create the folder "students"
+2. Initialize Node Project
 
-6.Open Postman, skip login and add a new tab
+Run:
 
-7.Select POST in the dropdown and paste the url "http://localhost:5000/api/students/add" and in the tab below select 'Body' and choose 'raw' then in the dropdown next to it choose "JSON" and click "Send".
+npm init -y
 
-8.The change should be reflected in MongoDB compass
+3. Install Packages
 
-9.Add a new tab and now select GET and paste url "http://localhost:5000/api/students" and click "Send"
+Run:
 
-10.For GET by id add a new tab and select GET and paste url "http://localhost:5000/api/students/<id>" , in place of <id> paste the _id from MongoDB compass 
+npm install express mongoose cors body-parser
 
-11.Add a new tab and select PUT and paste url "http://localhost:5000/api/students/update/<id>"
 
-12.Add a new tab and select DELETE and paste url "http://localhost:5000/api/students/delete/<id>" and refresh the MongoDB compass to see results  
+4. Create Folder Structure
+CRUD
+│
+├── config
+│   └── db.js
+│
+├── models
+│   └── Student.js
+│
+├── routes
+│   └── studentRoutes.js
+│
+├── server.js
+├── package.json
+
+5. Create MongoDB Database
+Open MongoDB Compass
+
+Connect using:
+
+mongodb://127.0.0.1:27017
+
+Create:
+
+Type	Name
+Database	collegeDB
+Collection	students
+
+6. Create config/db.js
+
+const mongoose = require("mongoose");
+
+const connectDB = async () => {
+    try {
+        await mongoose.connect("mongodb://127.0.0.1:27017/collegeDB");
+
+        console.log("MongoDB Connected");
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+module.exports = connectDB;
+
+7. Create models/Student.js
+
+const mongoose = require("mongoose");
+
+const StudentSchema = new mongoose.Schema({
+    name: String,
+    age: Number,
+    course: String,
+    phone: String
+});
+
+module.exports = mongoose.model("Student", StudentSchema);
+
+8. Create routes/studentRoutes.js
+
+const express = require("express");
+
+const router = express.Router();
+
+const Student = require("../models/Student");
+
+
+// CREATE
+router.post("/add", async (req, res) => {
+    const student = new Student(req.body);
+
+    await student.save();
+
+    res.send(student);
+});
+
+
+// READ ALL
+router.get("/", async (req, res) => {
+    const students = await Student.find();
+
+    res.send(students);
+});
+
+
+// READ ONE
+router.get("/:id", async (req, res) => {
+    const student = await Student.findById(req.params.id);
+
+    res.send(student);
+});
+
+
+// UPDATE
+router.put("/update/:id", async (req, res) => {
+    const student = await Student.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        { new: true }
+    );
+
+    res.send(student);
+});
+
+
+// DELETE
+router.delete("/delete/:id", async (req, res) => {
+    await Student.findByIdAndDelete(req.params.id);
+
+    res.send("Student Deleted");
+});
+
+module.exports = router;
+
+9. Create server.js
+
+const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+
+const connectDB = require("./config/db");
+
+const app = express();
+
+
+// Middleware
+app.use(cors());
+app.use(bodyParser.json());
+
+
+// Connect Database
+connectDB();
+
+
+// Routes
+app.use("/api/students", require("./routes/studentRoutes"));
+
+
+// Home Route
+app.get("/", (req, res) => {
+    res.send("Server is running!");
+});
+
+
+// Server
+const PORT = 5000;
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
+
+10. Start Server
+
+Run:
+
+node server.js
+
+Output:
+
+MongoDB Connected
+Server running on port 5000
+
+11. Open Postman
+
+12. CREATE Data
+
+POST
+URL
+http://localhost:5000/api/students/add
+Body → raw → JSON
+{
+  "name": "Agrim",
+  "age": 20,
+  "course": "IT",
+  "phone": "9876543210"
+}
+
+Click SEND.
+
+13. READ ALL Data
+
+GET
+URL
+http://localhost:5000/api/students
+
+Click SEND.
+
+14. READ ONE Data
+
+Copy _id from previous response.
+
+Example:
+
+any id = 681b6c4a12ab34cd56ef7890
+
+GET
+URL
+http://localhost:5000/api/students/681b6c4a12ab34cd56ef7890
+
+15. UPDATE Data
+
+
+PUT
+URL
+http://localhost:5000/api/students/update/681b6c4a12ab34cd56ef7890
+
+Body:
+{
+  "name": "Agrim Updated",
+  "age": 21,
+  "course": "Computer",
+  "phone": "9999999999"
+}
+
+Click SEND.
+
+16. DELETE Data
+Method
+DELETE
+URL
+http://localhost:5000/api/students/delete/681b6c4a12ab34cd56ef7890
+
+Click SEND.
